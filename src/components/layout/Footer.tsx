@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto max-w-[90rem] px-5 pb-10 pt-20 sm:px-8 lg:px-12 lg:pt-24">
         <div className="grid gap-14 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-5">
-            <div className="w-36 bg-white p-4">
+            <div className="w-36 [filter:drop-shadow(0_0_6px_rgba(255,255,255,0.75))_drop-shadow(0_0_14px_rgba(255,255,255,0.4))]">
               <Logo />
             </div>
             <p className="mt-8 font-serif text-3xl leading-tight text-white">{brand.name}</p>

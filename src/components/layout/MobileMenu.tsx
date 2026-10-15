@@ -81,7 +81,7 @@ export function MobileMenu({ open, onClose, pathname }: MobileMenuProps) {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-start justify-between px-5 pt-4 sm:px-8">
-            <div className="w-[5.5rem] bg-white p-2" onClick={onClose}>
+            <div className="w-[5.5rem]" onClick={onClose}>
               <Logo />
             </div>
             <button

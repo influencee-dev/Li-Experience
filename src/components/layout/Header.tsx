@@ -42,7 +42,7 @@ export function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,height] duration-500 ease-soft",
           overHero
-            ? "h-20 bg-transparent md:h-24"
+            ? "h-24 bg-transparent md:h-28"
             : "h-[4.5rem] bg-white/95 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md md:h-20",
         )}
       >
@@ -56,13 +56,13 @@ export function Header() {
         />
 
         <div className="relative mx-auto flex h-full max-w-[90rem] items-center justify-between px-5 sm:px-8 lg:px-12">
-          {/* Logo su "etichetta" bianca: resta leggibile e invariato su qualunque fondo */}
+          {/* Logo senza fondo; sopra la foto un alone chiaro leggero ne garantisce la leggibilità */}
           <div
             className={cn(
-              "self-start bg-white transition-all duration-500 ease-soft",
+              "transition-all duration-500 ease-soft",
               overHero
-                ? "w-[6.5rem] rounded-b-sm px-3 pb-3 pt-4 shadow-[0_18px_40px_-20px_rgba(15,39,66,0.55)] md:w-[8rem] md:px-4 md:pt-5"
-                : "w-[5rem] px-1.5 pb-1 pt-1.5 md:w-[5.75rem]",
+                ? "w-[5.75rem] [filter:drop-shadow(0_0_6px_rgba(255,255,255,0.75))_drop-shadow(0_0_14px_rgba(255,255,255,0.45))] md:w-[7rem]"
+                : "w-[5rem] md:w-[5.75rem]",
             )}
           >
             <Logo priority />
