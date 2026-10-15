@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/*
+ * Design token LI Experience Network
+ * Palette ricavata dal logo ufficiale. Modificare qui per aggiornare l'intero sito.
+ */
+@theme {
+  /* Brand */
+  --color-magenta: #9b105c;
+  --color-magenta-dark: #7a0c48;
+  --color-sky: #6095c3;
+  --color-sky-soft: #dce8f3;
+  --color-deep: #265f9b;
+  --color-deep-dark: #163b62;
+  --color-night: #0f2742;
+  --color-sun: #e9db1f;
+
+  /* Neutri */
+  --color-ink: #1b2a3b;
+  --color-ink-soft: #4a5868;
+  --color-ivory: #fbf9f5;
+  --color-mist: #f2f6fa;
+  --color-line: #e3e8ee;
+
+  /* Tipografia (variabili iniettate da next/font in layout.tsx) */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    overflow-x: clip;
+  }
+
+  /* Le ancore non finiscono sotto l'header fisso */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background: var(--color-sky-soft);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-magenta);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes scrollcue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(200%);
+  }
+}
